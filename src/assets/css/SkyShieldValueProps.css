@@ -1,0 +1,187 @@
+/* ============================================================= */
+/* SKYSHIELD EDU — VALUE PROPOSITIONS SECTION (FINAL 3D STYLE)   */
+/* ============================================================= */
+
+/* Theme Colors Mapped to Variables (Referencing your root variables) */
+:root {
+  /* Re-defining stat colors using your accent variables */
+  --stat-orange-alert: var(--accent-yellow); 
+  --stat-green-success: var(--accent-green); 
+}
+
+/* --- LIGHT THEME STYLES --- */
+.value-props-section {
+  padding: 100px 0; 
+  background-color: var(--bg-primary); /* Use global light background */
+}
+
+.value-props-section .container {
+  max-width: 1280px; 
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px; 
+}
+
+.related-courses-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--aviation-blue); 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 44px; 
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1.5px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.prop-card {
+  /* LIGHT: White/Light Gradient Card */
+  background: var(--card-gradient); 
+  padding: 40px;
+  border-radius: var(--card-border-radius); 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05), 0 0 0 1px var(--bg-tertiary); /* Soft shadow, light border */
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+.prop-card:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px var(--border-color);
+}
+
+/* --- Icon & Text Coloring (Light Theme) --- */
+.prop-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px; 
+  height: 75px;
+  border-radius: 50%;
+  margin: 0 auto 30px auto;
+  transition: all 0.4s ease;
+  transform: translateZ(5px); 
+}
+
+/* Light Backgrounds */
+.prop-icon-circle.sky-icon-bg { background-color: rgba(30, 64, 175, 0.1); } 
+.prop-icon-circle.orange-icon-bg { background-color: rgba(255, 188, 44, 0.1); } 
+.prop-icon-circle.green-icon-bg { background-color: rgba(10, 207, 131, 0.1); } 
+
+.prop-card .card-title {
+  font-size: 24px; 
+  font-weight: 800; 
+  color: var(--text-primary);
+  transform: translateZ(3px); 
+}
+
+.prop-card .card-description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transform: translateZ(2px); 
+}
+
+/* Bold text inside description */
+.prop-card .card-description strong {
+    font-weight: 700;
+    color: var(--text-primary); 
+}
+
+/* Icon Colors */
+.prop-card .text-sky-theme { color: var(--aviation-blue); }
+.prop-card .text-orange-theme { color: var(--stat-orange-alert); }
+.prop-card .text-green-theme { color: var(--stat-green-success); }
+
+/* ============================================================= */
+/* --- DARK THEME OVERRIDES --- */
+/* ============================================================= */
+
+.dark .value-props-section {
+  background-color: var(--bg-primary); /* Dark mode background */
+}
+
+.dark .section-title {
+  color: var(--text-primary); /* White text in dark mode */
+}
+
+.dark .prop-card {
+  /* DARK: Dark Gradient Card */
+  background: var(--card-gradient-dark); 
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-color); /* Dark shadow, dark border */
+  border: 1px solid var(--border-color); /* Sharper border contrast */
+}
+
+.dark .prop-card:hover {
+  box-shadow: var(--shadow-3d-purple), 0 0 0 1px var(--accent-purple); /* Purple glow on hover */
+}
+
+/* --- Dark Icon & Text Coloring --- */
+
+.dark .prop-card .card-title {
+  color: var(--text-primary); /* White */
+}
+
+.dark .prop-card .card-description {
+  color: var(--text-secondary); /* Light Gray */
+}
+
+.dark .prop-card .card-description strong {
+    color: var(--text-primary); /* White bold text */
+}
+
+/* Dark Icon Backgrounds (More transparent for subtlety) */
+.dark .prop-icon-circle.sky-icon-bg { 
+  background-color: rgba(60, 100, 200, 0.15); /* Slightly brighter for dark mode visibility */
+} 
+.dark .prop-icon-circle.orange-icon-bg { 
+  background-color: rgba(255, 188, 44, 0.15); 
+} 
+.dark .prop-icon-circle.green-icon-bg { 
+  background-color: rgba(10, 207, 131, 0.15); 
+} 
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .value-props-section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .prop-card {
+    transform: none !important; 
+    box-shadow: var(--shadow-md);
+  }
+  /* Ensure mobile dark mode card has proper styling */
+  .dark .prop-card {
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+  }
+}

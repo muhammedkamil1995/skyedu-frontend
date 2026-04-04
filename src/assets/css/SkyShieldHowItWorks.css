@@ -1,0 +1,787 @@
+/* ============================================================= */
+/* SKYSHIELD EDU — HOW IT WORKS SECTION (Interactive Steps Style) */
+/* ============================================================= */
+
+/* --- Section Container & Layout --- */
+.how-it-works-section {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Beautiful Gradient Background */
+.how-it-works-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, 
+            rgba(248, 250, 252, 0.98) 0%,
+            rgba(241, 245, 249, 0.96) 25%,
+            rgba(226, 232, 240, 0.94) 50%,
+            rgba(226, 232, 240, 0.92) 75%,
+            rgba(248, 250, 252, 0.90) 100%
+        ),
+        radial-gradient(
+            circle at 10% 30%,
+            rgba(224, 231, 255, 0.3) 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(199, 210, 254, 0.2) 0%,
+            transparent 40%
+        );
+    z-index: -2;
+}
+
+/* Animated Background Pattern */
+.how-it-works-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(30, 64, 175, 0.04) 2px, transparent 2px),
+        radial-gradient(circle at 40% 70%, rgba(139, 92, 246, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 60% 20%, rgba(16, 185, 129, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 80% 50%, rgba(255, 188, 44, 0.03) 2px, transparent 2px);
+    background-size: 300px 300px, 400px 400px, 250px 250px, 200px 200px;
+    background-position: 0 0, 100px 200px, 200px 100px, 150px 300px;
+    animation: floatPattern 40s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes floatPattern {
+    0% {
+        background-position: 0 0, 100px 200px, 200px 100px, 150px 300px;
+    }
+    100% {
+        background-position: 300px 300px, 400px 400px, 250px 250px, 200px 200px;
+    }
+}
+
+.how-it-works-section .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.how-it-works-section .grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.how-it-works-section .section-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--text-primary);
+    letter-spacing: -1.8px;
+    margin-bottom: 60px;
+    position: relative;
+    background: linear-gradient(135deg, 
+        rgba(15, 23, 42, 1) 0%,
+        rgba(30, 64, 175, 0.9) 50%,
+        rgba(15, 23, 42, 1) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.how-it-works-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--aviation-blue), var(--accent-purple));
+    border-radius: 2px;
+    animation: titleUnderline 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleUnderline {
+    0% {
+        width: 60px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 80px;
+        opacity: 1;
+    }
+}
+
+/* --- Left Column: Steps Styling --- */
+.steps-container {
+    position: relative;
+    padding-top: 20px;
+}
+
+/* Animated Connector Line */
+.step-list {
+    position: relative;
+    padding-left: 40px;
+}
+
+.step-list::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 19px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--aviation-blue) 20%,
+        var(--accent-purple) 40%,
+        rgba(255, 188, 44, 0.8) 60%,
+        rgba(16, 185, 129, 0.8) 80%,
+        transparent
+    );
+    animation: flowLine 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes flowLine {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+.step {
+    position: relative;
+    margin-bottom: 48px;
+    z-index: 1;
+}
+
+/* Step Number Styling */
+.step-number {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    background: linear-gradient(135deg, 
+        var(--aviation-blue),
+        var(--accent-purple)
+    );
+    color: white;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 
+        0 8px 24px rgba(30, 64, 175, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid white;
+}
+
+.step:hover .step-number {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 
+        0 12px 32px rgba(30, 64, 175, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.step-1 .step-number {
+    background: linear-gradient(135deg, var(--aviation-blue), #3b82f6);
+}
+
+.step-2 .step-number {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.step-3 .step-number {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.step-content {
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Step Card */
+.step-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.06),
+        0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(248, 250, 252, 0.8) 100%
+    );
+    z-index: -1;
+    border-radius: 24px;
+}
+
+.step-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, 
+        var(--aviation-blue),
+        var(--accent-purple),
+        var(--aviation-blue)
+    );
+    border-radius: 26px;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-8px) translateX(8px);
+    box-shadow: 
+        0 20px 40px rgba(30, 64, 175, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 1),
+        0 0 0 4px rgba(30, 64, 175, 0.05);
+}
+
+.step-card:hover::after {
+    opacity: 0.1;
+}
+
+/* Step Card Icon */
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, 
+        rgba(30, 64, 175, 0.1),
+        rgba(30, 64, 175, 0.05)
+    );
+    border: 1px solid rgba(30, 64, 175, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    border-radius: 16px;
+}
+
+.icon-wrapper.orange-icon-bg { 
+    background: linear-gradient(135deg, 
+        rgba(245, 158, 11, 0.1),
+        rgba(249, 115, 22, 0.05)
+    );
+    border: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.icon-wrapper.green-icon-bg { 
+    background: linear-gradient(135deg, 
+        rgba(16, 185, 129, 0.1),
+        rgba(5, 150, 105, 0.05)
+    );
+    border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.step-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.step-card:hover .icon-wrapper.orange-icon-bg {
+    box-shadow: 
+        0 8px 24px rgba(245, 158, 11, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.step-card:hover .icon-wrapper.green-icon-bg {
+    box-shadow: 
+        0 8px 24px rgba(16, 185, 129, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.icon-wrapper svg {
+    color: var(--aviation-blue);
+    transition: all 0.3s ease;
+}
+
+.icon-wrapper.orange-icon-bg svg {
+    color: #f59e0b;
+}
+
+.icon-wrapper.green-icon-bg svg {
+    color: #10b981;
+}
+
+.step-card:hover .icon-wrapper svg {
+    transform: scale(1.2);
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.step-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, 
+        var(--text-primary) 0%,
+        rgba(30, 64, 175, 0.9) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.step-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--aviation-blue), transparent);
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+.step-card:hover .step-title::after {
+    width: 100%;
+}
+
+.step-description {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Right Column: Image and Overlay --- */
+.image-container {
+    position: relative;
+    border-radius: 32px;
+    min-height: 600px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.image-container:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+    box-shadow: 
+        0 30px 80px rgba(30, 64, 175, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 1),
+        0 0 0 4px rgba(30, 64, 175, 0.05);
+}
+
+/* Floating Elements inside Image */
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(0, 0, 0, 0.3)
+    );
+    z-index: 1;
+}
+
+.image-overlay-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: slideUp 0.6s ease forwards 0.6s;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.avatar-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.avatars {
+    display: flex;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.avatar:nth-child(1) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.avatar:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.avatar:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.trainee-count {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    flex: 1;
+}
+
+.trainee-count strong {
+    color: var(--aviation-blue);
+    font-size: 24px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+    color: #fbbf24;
+}
+
+.rating-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* --- Floating Elements Animation --- */
+.floating-element {
+    position: absolute;
+    font-size: 24px;
+    animation: floatAround 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.floating-1 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.floating-2 {
+    top: 60%;
+    right: 20%;
+    animation-delay: -2s;
+}
+
+.floating-3 {
+    bottom: 30%;
+    left: 10%;
+    animation-delay: -4s;
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -10px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, -20px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-10px, -10px) rotate(270deg);
+    }
+}
+
+/* ============================================================= */
+/* --- DARK THEME OVERRIDES --- */
+/* ============================================================= */
+.dark .how-it-works-section::before {
+    background: 
+        linear-gradient(135deg, 
+            rgba(15, 23, 42, 0.98) 0%,
+            rgba(30, 41, 59, 0.96) 25%,
+            rgba(30, 41, 59, 0.94) 50%,
+            rgba(51, 65, 85, 0.92) 75%,
+            rgba(71, 85, 105, 0.90) 100%
+        ),
+        radial-gradient(
+            circle at 10% 30%,
+            rgba(30, 64, 175, 0.1) 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(139, 92, 246, 0.08) 0%,
+            transparent 40%
+        );
+}
+
+.dark .step-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .step-card::before {
+    background: linear-gradient(135deg, 
+        rgba(30, 41, 59, 0.8) 0%,
+        rgba(15, 23, 42, 0.8) 100%
+    );
+}
+
+.dark .step-card:hover {
+    border-color: rgba(30, 64, 175, 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(30, 64, 175, 0.2);
+}
+
+.dark .step-title {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 1) 0%,
+        rgba(148, 163, 184, 0.9) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.dark .image-container {
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .image-overlay-info {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .trainee-count {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    .how-it-works-section .grid-layout {
+        gap: 60px;
+    }
+    
+    .image-container {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    .how-it-works-section .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .steps-container {
+        order: 2;
+    }
+    
+    .image-container {
+        order: 1;
+        min-height: 450px;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    
+    .how-it-works-section .section-title {
+        margin-top: 0;
+        font-size: 42px;
+    }
+    
+    .step-list {
+        padding-left: 30px;
+    }
+    
+    .step-number {
+        left: -48px;
+        width: 42px;
+        height: 42px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works-section {
+        padding: 80px 0;
+    }
+    
+    .how-it-works-section .container {
+        padding: 0 24px;
+    }
+    
+    .how-it-works-section .section-title {
+        font-size: 36px;
+    }
+    
+    .step {
+        margin-bottom: 36px;
+    }
+    
+    .step-card {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .icon-wrapper {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+    
+    .image-container {
+        min-height: 400px;
+        border-radius: 24px;
+    }
+    
+    .image-overlay-info {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .how-it-works-section .section-title {
+        font-size: 32px;
+    }
+    
+    .step-list {
+        padding-left: 0;
+        border-left: none;
+    }
+    
+    .step-list::before {
+        display: none;
+    }
+    
+    .step-number {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-bottom: 16px;
+    }
+    
+    .step-content {
+        padding-left: 0;
+    }
+    
+    .image-container {
+        min-height: 350px;
+    }
+}

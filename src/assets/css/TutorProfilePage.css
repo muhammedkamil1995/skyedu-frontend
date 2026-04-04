@@ -1,0 +1,335 @@
+/* src/assets/css/TutorProfilePage.css */
+
+/* --- Reuse dashboard variables --- */
+:root {
+  --tp-bg: var(--bg-secondary);
+  --tp-surface: var(--bg-secondary);
+  --tp-border: var(--border-color);
+  --tp-text-primary: var(--text-primary);
+  --tp-text-secondary: var(--text-secondary);
+  --tp-blue: var(--primary-purple);
+  --tp-blue-soft: rgba(139, 92, 246, 0.1);
+  --tp-green: #10b981;
+  --tp-green-soft: rgba(16, 185, 129, 0.1);
+  --tp-amber: #f59e0b;
+  --tp-amber-soft: rgba(245, 158, 11, 0.1);
+  --tp-purple: var(--primary-purple);
+  --tp-purple-soft: rgba(139, 92, 246, 0.1);
+  --tp-red: #dc2626;
+  --tp-red-soft: rgba(220, 38, 38, 0.1);
+}
+
+.dark {
+  --tp-blue-soft: rgba(139, 92, 246, 0.2);
+  --tp-green-soft: rgba(16, 185, 129, 0.2);
+  --tp-amber-soft: rgba(245, 158, 11, 0.2);
+  --tp-purple-soft: rgba(139, 92, 246, 0.2);
+  --tp-red-soft: rgba(220, 38, 38, 0.2);
+}
+
+/* --- Page wrapper (reuses .profile-page styles, but we add custom) --- */
+.tutor-profile-page {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Accordion sections */
+.form-section {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--tp-border);
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background: var(--bg-tertiary);
+}
+
+.section-header h2, .section-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chevron {
+  transition: transform 0.2s;
+  color: var(--text-secondary);
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  padding: 1.5rem;
+  border-top: 1px solid var(--tp-border);
+}
+
+/* Tags input */
+.tags-input {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-tertiary);
+  padding: 0.5rem;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-purple);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  margin-left: 0.25rem;
+  padding: 0;
+}
+
+.add-tag {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-tag input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.add-tag button {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.add-tag button:hover {
+  background: var(--border-color);
+}
+
+/* Checkbox group */
+.checkbox-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+/* Stats card */
+.stats-card {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stats-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Change password inside sidebar */
+.change-password-section {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.change-password-section .section-header {
+  padding: 0.5rem 0;
+}
+
+.change-password-section .section-header h3 {
+  font-size: 1rem;
+}
+
+.change-password-section .section-content {
+  padding: 1rem 0 0;
+  border-top: none;
+}
+
+/* Override some generic styles to match */
+.tutor-profile-page .avatar-section {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tutor-profile-page .avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--gradient-primary);
+}
+
+.tutor-profile-page .avatar img,
+.tutor-profile-page .avatar .avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tutor-profile-page .change-avatar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Password input wrapper */
+.password-group {
+  position: relative;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.password-toggle:hover {
+  color: var(--primary-purple);
+}

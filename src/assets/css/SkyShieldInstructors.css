@@ -1,0 +1,637 @@
+/* ============================================================= */
+/* SKYSHIELD EDU — INSTRUCTORS SECTION (Alumni Layout Style)     */
+/* ============================================================= */
+
+/* --- Section Container & Header --- */
+.instructors-section {
+    padding: 100px 0 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Beautiful Soft Gradient Background */
+.instructors-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(248, 250, 252, 0.92) 25%,
+            rgba(240, 249, 255, 0.90) 50%,
+            rgba(239, 246, 255, 0.88) 75%,
+            rgba(238, 242, 255, 0.85) 100%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(224, 231, 255, 0.3) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(226, 232, 240, 0.2) 0%,
+            transparent 50%
+        );
+    z-index: -1;
+}
+
+/* Add subtle floating particles/animated dots */
+.instructors-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 200px 200px, 300px 300px, 250px 250px, 180px 180px;
+    background-position: 0 0, 100px 100px, 50px 150px, 150px 50px;
+    animation: floatParticles 20s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes floatParticles {
+    0% {
+        background-position: 0 0, 100px 100px, 50px 150px, 150px 50px;
+    }
+    100% {
+        background-position: 200px 200px, 300px 300px, 250px 350px, 350px 250px;
+    }
+}
+
+.instructors-section .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.instructors-section .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+/* Decorative header elements */
+.instructors-section .section-header::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(30, 64, 175, 0.3),
+        rgba(139, 92, 246, 0.3),
+        rgba(30, 64, 175, 0.3)
+    );
+    border-radius: 2px;
+}
+
+.instructors-section .tag {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--aviation-blue);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(30, 64, 175, 0.08);
+    border-radius: 20px;
+    border: 1px solid rgba(30, 64, 175, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.instructors-section .section-title {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1.5px;
+    position: relative;
+    background: linear-gradient(135deg, 
+        var(--text-primary) 0%,
+        rgba(30, 64, 175, 0.9) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-top: 20px;
+}
+
+/* Decorative subtitle */
+.instructors-section .section-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 20px auto 0;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* --- Card Grid Layout --- */
+.instructor-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    position: relative;
+}
+
+.instructor-card {
+    /* Enhanced Card with cute HD look */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Card background overlay */
+.instructor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(248, 250, 252, 0.9) 100%
+    );
+    z-index: -1;
+    border-radius: 24px;
+}
+
+/* Card hover glow effect */
+.instructor-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, 
+        rgba(30, 64, 175, 0.1),
+        rgba(139, 92, 246, 0.1),
+        rgba(30, 64, 175, 0.1)
+    );
+    border-radius: 26px;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(30, 64, 175, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 1),
+        0 0 0 4px rgba(30, 64, 175, 0.05);
+    border-color: rgba(30, 64, 175, 0.2);
+}
+
+.instructor-card:hover::after {
+    opacity: 1;
+}
+
+/* --- Card Header (Avatar + Badge) --- */
+.instructor-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.instructor-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 4px 12px rgba(30, 64, 175, 0.15),
+        0 0 0 2px rgba(30, 64, 175, 0.2);
+    transition: all 0.3s ease;
+}
+
+.instructor-card:hover .instructor-avatar {
+    transform: scale(1.05);
+    box-shadow: 
+        0 6px 20px rgba(30, 64, 175, 0.25),
+        0 0 0 3px rgba(30, 64, 175, 0.3);
+}
+
+.experience-badge {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, 
+        rgba(16, 185, 129, 0.1),
+        rgba(16, 185, 129, 0.05)
+    );
+    color: var(--accent-green);
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.instructor-card:hover .experience-badge {
+    background: linear-gradient(135deg, 
+        rgba(16, 185, 129, 0.15),
+        rgba(16, 185, 129, 0.1)
+    );
+    transform: translateY(-2px);
+}
+
+.experience-badge svg {
+    margin-right: 6px;
+    color: var(--accent-green);
+}
+
+.instructor-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+.instructor-name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--aviation-blue), var(--accent-purple));
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+.instructor-card:hover .instructor-name::after {
+    width: 100%;
+}
+
+.instructor-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    padding: 8px 0;
+}
+
+.instructor-quote {
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    padding-left: 16px;
+    border-left: 3px solid rgba(30, 64, 175, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.instructor-card:hover .instructor-quote {
+    border-left-color: var(--aviation-blue);
+}
+
+/* --- Company Transfer Logos (Simulated) --- */
+.company-transfer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+    padding: 12px;
+    background: rgba(248, 250, 252, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.company-transfer .company-logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    opacity: 0.9;
+    padding: 6px 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.company-transfer svg {
+    margin: 0 12px;
+    color: var(--aviation-blue);
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.instructor-card:hover .company-transfer svg {
+    transform: scale(1.2);
+}
+
+/* --- Link --- */
+.read-bio-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--aviation-blue);
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: rgba(30, 64, 175, 0.05);
+    transition: all 0.3s ease;
+}
+
+.read-bio-link svg {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.read-bio-link:hover {
+    color: white;
+    background: linear-gradient(135deg, var(--aviation-blue), var(--accent-purple));
+    transform: translateX(4px);
+}
+
+.read-bio-link:hover svg {
+    transform: translateX(4px);
+}
+
+/* --- Bottom Section (Dots and Button) --- */
+.cta-dots {
+    text-align: center;
+    margin: 48px 0 36px 0;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+    border-radius: 50%;
+    background: rgba(30, 64, 175, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.dot:hover {
+    transform: scale(1.3);
+    background: rgba(30, 64, 175, 0.4);
+}
+
+.dot.active {
+    background: var(--aviation-blue);
+    transform: scale(1.3);
+    box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.2);
+}
+
+.dot.active::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid rgba(30, 64, 175, 0.1);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+.bottom-cta {
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+.bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(30, 64, 175, 0.3),
+        transparent
+    );
+}
+
+.connect-btn {
+    padding: 16px 40px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, 
+        var(--aviation-blue),
+        var(--accent-purple)
+    );
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 
+        0 8px 32px rgba(30, 64, 175, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.connect-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.connect-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 
+        0 16px 48px rgba(30, 64, 175, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.connect-btn:hover::before {
+    left: 100%;
+}
+
+.connect-btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* ============================================================= */
+/* --- DARK THEME OVERRIDES --- */
+/* ============================================================= */
+.dark .instructors-section::before {
+    background: 
+        linear-gradient(135deg, 
+            rgba(15, 23, 42, 0.98) 0%,
+            rgba(15, 23, 42, 0.95) 25%,
+            rgba(30, 41, 59, 0.92) 50%,
+            rgba(30, 41, 59, 0.90) 75%,
+            rgba(51, 65, 85, 0.88) 100%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(30, 64, 175, 0.1) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(139, 92, 246, 0.08) 0%,
+            transparent 50%
+        );
+}
+
+.dark .instructors-section::after {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+}
+
+.dark .instructor-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .instructor-card::before {
+    background: linear-gradient(135deg, 
+        rgba(30, 41, 59, 0.9) 0%,
+        rgba(15, 23, 42, 0.9) 100%
+    );
+}
+
+.dark .instructor-card:hover {
+    border-color: rgba(30, 64, 175, 0.4);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(30, 64, 175, 0.2),
+        0 0 0 4px rgba(30, 64, 175, 0.05);
+}
+
+.dark .company-transfer {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .company-transfer .company-logo {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.dark .read-bio-link {
+    background: rgba(30, 64, 175, 0.1);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    .instructors-section .section-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .instructor-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+    
+    .instructors-section .section-title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+    .instructors-section {
+        padding: 80px 0 40px 0;
+    }
+    
+    .instructors-section .section-title {
+        font-size: 30px;
+    }
+    
+    .instructors-section .tag {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+    
+    .instructor-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .instructor-card-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .instructors-section .container {
+        padding: 0 20px;
+    }
+    
+    .instructors-section .section-title {
+        font-size: 26px;
+    }
+    
+    .instructors-section .section-subtitle {
+        font-size: 16px;
+        padding: 0;
+    }
+    
+    .connect-btn {
+        padding: 14px 32px;
+        font-size: 16px;
+        width: 100%;
+    }
+}

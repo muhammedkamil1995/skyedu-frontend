@@ -1,0 +1,144 @@
+/* ============================================================= */
+/* SKYSHIELD EDU — CAREER FOCUS SECTION (Based on Join Program Design) */
+/* ============================================================= */
+
+/* --- Section Container & Header --- */
+.career-focus-section {
+  padding: 100px 0;
+  background-color: var(--bg-primary); /* Uses light background by default */
+}
+
+.career-focus-section .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.related-courses-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--aviation-blue); 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1.5px;
+}
+
+/* --- Card Grid Layout --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.focus-card {
+  /* Inherits most styling from .card-3d utility class */
+  text-align: center;
+  padding: 40px 30px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* --- Card Content --- */
+.icon-circle {
+  /* Larger circle for more visual weight */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
+  transform: translateZ(10px); /* Lifts the icon strongly in 3D */
+}
+
+/* Light Theme Icon Backgrounds (Matching Value Props Section) */
+.icon-circle.sky-icon-bg { background-color: rgba(30, 64, 175, 0.1); } 
+.icon-circle.orange-icon-bg { background-color: rgba(255, 188, 44, 0.1); } 
+.icon-circle.green-icon-bg { background-color: rgba(10, 207, 131, 0.1); } 
+
+.focus-card .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  transform: translateZ(5px);
+}
+
+.focus-card .card-description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transform: translateZ(3px);
+}
+
+/* Icon Colors (Matching Value Props Section) */
+.focus-card .text-sky-theme { color: var(--aviation-blue); }
+.focus-card .text-orange-theme { color: var(--accent-yellow); }
+.focus-card .text-green-theme { color: var(--accent-green); }
+
+.focus-card .card-description strong {
+    font-weight: 700;
+    color: var(--text-primary); 
+}
+
+/* --- DARK THEME OVERRIDES --- */
+.dark .career-focus-section {
+    background-color: var(--bg-primary); 
+}
+
+.dark .focus-card {
+    background: var(--card-gradient-dark);
+    box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-color); 
+    border: 1px solid var(--border-color); 
+}
+
+.dark .focus-card:hover {
+    box-shadow: var(--shadow-3d-blue), 0 0 0 1px var(--accent-blue);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .career-focus-section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .focus-card {
+    /* Disable 3D on mobile */
+    transform: none !important; 
+    box-shadow: var(--shadow-md);
+  }
+  .dark .focus-card {
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+  }
+}
